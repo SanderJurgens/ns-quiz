@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Customizable meta tags -->
+    <title>NS Quiz</title>
+    <meta name="author" content="Sander Jurgens">
+    <meta name="description" content="Test your Dutch Railways knowledge">
+    
+    <!-- Favicons -->
+    <link href="img/favicon.ico" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    
+    <!-- Vendor CSS --> 
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/select2.min.css" rel="stylesheet">
+    <link href="css/icons.css" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+  </head>
+  
+  <body>    
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-custom">
+      <div class="container-fluid">
+      
+        <!-- Home -->
+        <a class="navbar-brand" id="home" href="#">
+          <span class="material-icons">home</span>
+        </a>
+      
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#score" aria-controls="score" aria-expanded="false" aria-label="Toggle score">
+          <span class="navbar-toggler-icon"></span>        
+        </button>
+
+        <!-- Score -->
+        <div class="collapse navbar-collapse" id="score">      
+          <ul class="navbar-nav ms-auto mb-0">
+            <li class="nav-item">
+              <span class="material-icons" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Station abbreviations">place</span> 
+              <span id="score1"></span>
+            </li>
+            <li class="nav-item">
+              <span class="material-icons" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Train series">timeline</span>
+              <span id="score2"></span>
+            </li>
+            <li class="nav-item">
+              <span class="material-icons" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Rolling stock numbers">train</span>
+              <span id="score3"></span>
+            </li>
+          </ul>        
+        </div>
+      
+      </div>
+    </nav>
+    
+    <!-- Main container -->
+    <div class="container container-quiz">  
+        
+      <!-- Menu -->
+      <div class="row align-items-center" id="menu">
+        <div class="col-9 mx-auto">
+          <div class="card text-center">
+            <div class="card-header">
+              <b>Choose the quiz type</b>
+            </div>
+            <div class="list-group list-group-flush">
+              <a href="#" id="link1" class="list-group-item list-group-item-action">
+                <span class="material-icons">place</span>Station abbreviations
+              </a>
+              <a href="#" id="link2" class="list-group-item list-group-item-action">
+                <span class="material-icons">timeline</span>Train series
+              </a>
+              <a href="#" id="link3" class="list-group-item list-group-item-action">
+                <span class="material-icons">train</span>Rolling stock numbers
+              </a>
+            </div>
+            <div class="card-footer menu-footer text-muted">
+              <b>Sources:</b> <a href="data/spoorkaart2019.pdf" target="_blank">Spoorkaart 2019</a> & Kentallenoverzicht 2018-12
+              <hr>
+              <b>NS Quiz</b> // Created by <a href="https://www.sanderjurgens.com">Sander Jurgens</a>
+            </div>
+          </div>
+        </div>
+      </div>      
+
+      <!-- Quiz 1 -->
+      <div class="row align-items-center quiz" id="quiz1">
+        <div class="col-9 mx-auto">
+          <div class="card text-center">
+            <div class="card-header">
+             <b>Station abbreviations</b>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Which station name matches to the station abbreviation stated below?</p>
+              <h5 class="card-title question" id="question1"></h5>
+              <select id="answer1"></select>
+              <hr>
+              <a href="#" id="submit1" class="btn btn-outline-primary btn-submit">Confirm</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Quiz 2 -->
+      <div class="row align-items-center quiz" id="quiz2">
+        <div class="col-9 mx-auto">
+          <div class="card text-center">
+            <div class="card-header">
+             <b>Train series</b>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Which train service belongs to the trains series stated below?</p>
+              <h5 class="card-title question" id="question2"></h5>
+              <select id="answer2"></select>
+              <hr>
+              <a href="#" id="submit2" class="btn btn-outline-primary btn-submit">Confirm</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Quiz 3 -->
+      <div class="row align-items-center quiz" id="quiz3">
+        <div class="col-9 mx-auto">
+          <div class="card text-center">
+            <div class="card-header">
+             <b>Rolling stock numbers</b>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Which rolling stock type belongs to the rolling stock number stated below?</p>
+              <h5 class="card-title question" id="question3"></h5>
+              <select id="answer3"></select>
+              <hr>
+              <a href="#" id="submit3" class="btn btn-outline-primary btn-submit">Confirm</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Alert: Correct -->
+      <div class="row align-items-center result" id="correct">
+        <div class="col-9 mx-auto">
+          <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            <span class="material-icons icon-correct">check_circle</span>
+            <span id="correct-text"></span>
+            <button type="button" class="btn-close alert-close" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+        
+      <!-- Alert: Incorrect -->
+      <div class="row align-items-center result" id="incorrect">
+        <div class="col-9 mx-auto">
+          <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+             <span class="material-icons icon-incorrect">dangerous</span>
+             <span id="incorrect-text"></span>
+             <button type="button" class="btn-close alert-close" aria-label="Close"></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- Vendor JS  -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>    
+    <script src="js/bootstrap.min.js"></script>    
+    <script src="js/select2.min.js"></script>
+    
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+    
+    <!-- Quiz data JS -->
+    <script src="data/data.js"></script>
+    
+  <body>
+
+</html>

@@ -1,0 +1,122 @@
+body {
+  background-color: #E6E6E9;
+  color: #070721;
+  height: 100%;
+}
+
+hr {
+  color: #9C9CA6;
+}
+
+/*--------------------------------------------------------------
+# Icons
+--------------------------------------------------------------*/
+.material-icons {
+  font-size: 30px;
+  color: #003082;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/*--------------------------------------------------------------
+# Navbar
+--------------------------------------------------------------*/
+.navbar-custom {
+  background-color: #FFC917;
+  color: #003082;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+/*--------------------------------------------------------------
+# Container
+--------------------------------------------------------------*/
+.container-main {
+  min-height: calc(100vh - 170px);
+}
+
+.card {
+  margin-top: 50px;
+}
+
+.card-header {
+  background-color: #FFC917;
+  color: #003082;
+}
+
+.card-header,
+.list-group-item,
+.card-footer {
+  padding: 12px;
+}
+
+/*--------------------------------------------------------------
+# Menu
+--------------------------------------------------------------*/
+.list-group-item:hover,
+.list-group-item:active,
+.list-group-item:hover .material-icons,
+.list-group-item:active .material-icons {
+  background-color: #003082;
+  color: #FFFFFF;	
+}
+
+.menu-footer a,
+.menu-footer a:visited { 
+  color: #0063D3;
+  text-decoration: none;
+}
+
+.menu-footer a:hover,
+.menu-footer a:active { 
+  color: #004BA0; 
+  text-decoration: underline;
+
+}
+
+/*--------------------------------------------------------------
+# Quiz
+--------------------------------------------------------------*/
+.quiz {
+  display: none;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.btn-submit {
+  border-color: #003082;
+  color: #003082;
+}
+
+.btn-submit:hover,
+.btn-submit:active {
+  border-color: #003082;
+  background-color: #003082;
+  color: #FFFFFF;
+}
+
+/*--------------------------------------------------------------
+# Alerts
+--------------------------------------------------------------*/
+.result {
+  margin-top: 50px;
+  display: none;
+}
+
+.icon-correct, 
+.icon-incorrect {
+  margin-top: -12px;
+  margin-bottom: -10px;
+}
+
+.icon-correct {
+  color: #009A42;
+}
+
+.icon-incorrect {
+  color: #DB0029;
+}
